@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home • NovaShop</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">Nova<span>Shop</span></a>
+    <nav class="nav">
+      <a href="products.html">Products</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="cart.html">Cart</a>
+      <a href="payment.html">Payment</a>
+      <a href="login.php" class="btn btn-ghost">Login</a>
+      <a href="register_new.php" class="btn btn-primary">Create Account</a>
+    </nav>
+  </div>
+  <form class="searchbar container" action="products.html" method="get">
+    <input type="text" name="q" placeholder="Search for products, brands and more…" />
+    <button type="submit" class="btn btn-dark">Search</button>
+  </form>
+</header>
+<main class="page">
+
+<section class="hero container">
+  <div class="hero-copy">
+    <h1>Discover your next favorite thing</h1>
+    <p>Hand‑picked products, clean design, and a smooth, distraction‑free experience.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="products.html">Shop New Arrivals</a>
+      <a class="btn btn-ghost" href="wishlist.html">View Wishlist</a>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="true"></div>
+</section>
+
+<section class="container section">
+  <div class="section-head">
+    <h2>Featured Picks</h2>
+    <a href="products.html" class="link">See all →</a>
+  </div>
+  <div class="grid products">
+    <article class="card product">
+      <div class="media placeholder"></div>
+      <div class="card-body">
+        <h3>Minimalist Headphones</h3>
+        <p class="price">$79</p>
+        <div class="actions">
+          <a class="btn btn-dark" href="cart.html">Add to Cart</a>
+          <a class="btn btn-ghost" href="wishlist.html">Wishlist</a>
+        </div>
+      </div>
+    </article>
+    <article class="card product">
+      <div class="media placeholder"></div>
+      <div class="card-body">
+        <h3>Everyday Backpack</h3>
+        <p class="price">$59</p>
+        <div class="actions">
+          <a class="btn btn-dark" href="cart.html">Add to Cart</a>
+          <a class="btn btn-ghost" href="wishlist.html">Wishlist</a>
+        </div>
+      </div>
+    </article>
+    <article class="card product">
+      <div class="media placeholder"></div>
+      <div class="card-body">
+        <h3>Classic Sneakers</h3>
+        <p class="price">$89</p>
+        <div class="actions">
+          <a class="btn btn-dark" href="cart.html">Add to Cart</a>
+          <a class="btn btn-ghost" href="wishlist.html">Wishlist</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="container section comments">
+  <h2>Customer Comments</h2>
+  <form class="comment-form" action="#">
+    <label for="cmt">Leave a comment</label>
+    <textarea id="cmt" rows="4" placeholder="Share your experience…"></textarea>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+  <div class="comment-list">
+    <div class="comment"><strong>Raisa</strong><span>• 5★</span><p>Loved the packaging and fast delivery!</p></div>
+    <div class="comment"><strong>Arif</strong><span>• 4★</span><p>Great quality for the price.</p></div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo small">Nova<span>Shop</span></div>
+      <p>Beautiful products. Simple checkout. No JavaScript demo.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <a href="products.html">All Products</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="cart.html">Cart</a>
+      <a href="payment.html">Payment</a>
+    </div>
+    <div>
+      <h4>Account</h4>
+      <a href="login.html">Login</a>
+      <a href="register.html">Create Account</a>
+      <a href="profile.html">Profile</a>
+      <a href="admin.html">Admin Panel</a>
+    </div>
+  </div>
+  <p class="copyright">© 2025 NovaShop. For demo use only.</p>
+</footer>
+</body>
+</html>
