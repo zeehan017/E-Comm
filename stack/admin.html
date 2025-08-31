@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cart • NovaShop</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Admin Panel • NovaShop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site-header">
@@ -27,38 +27,32 @@
 <main class="page">
 
 <section class="container section">
-  <div class="section-head">
-    <h2>Your Cart</h2>
-    <p class="muted">Review your items before checkout.</p>
-  </div>
-  <div class="cart-grid">
-    <div class="cart-list card">
-      <div class="cart-row">
-        <div class="media tiny placeholder"></div>
-        <div class="grow">
-          <h3>Wireless Earbuds</h3>
-          <p class="muted">Qty: 1</p>
-        </div>
-        <strong>$49</strong>
-      </div>
-      <div class="cart-row">
-        <div class="media tiny placeholder"></div>
-        <div class="grow">
-          <h3>Cotton T‑Shirt</h3>
-          <p class="muted">Qty: 2</p>
-        </div>
-        <strong>$38</strong>
-      </div>
+  <div class="admin card">
+    <h2>Admin Panel</h2>
+    <div class="grid two">
+      <section>
+        <h3>Products</h3>
+        <table class="table">
+          <thead><tr><th>Name</th><th>Price</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Wireless Earbuds</td><td>$49</td><td>Active</td></tr>
+            <tr><td>Leather Wallet</td><td>$39</td><td>Active</td></tr>
+            <tr><td>Sports Watch</td><td>$69</td><td>Low Stock</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h3>Orders</h3>
+        <table class="table">
+          <thead><tr><th>#</th><th>Customer</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>10021</td><td>Raisa</td><td>Delivered</td></tr>
+            <tr><td>10022</td><td>Arif</td><td>Processing</td></tr>
+          </tbody>
+        </table>
+      </section>
     </div>
-    <aside class="card cart-summary">
-      <h3>Order Summary</h3>
-      <div class="rows">
-        <div><span>Subtotal</span><span>$87</span></div>
-        <div><span>Shipping</span><span>$3</span></div>
-        <div class="total"><span>Total</span><span>$90</span></div>
-      </div>
-      <a class="btn btn-primary full" href="payment.html">Proceed to Payment</a>
-    </aside>
+    <p class="muted">Note: This is a static UI demo without JS/backend.</p>
   </div>
 </section>
 

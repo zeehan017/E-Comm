@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Admin Panel • NovaShop</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Wishlist • NovaShop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site-header">
@@ -27,32 +27,33 @@
 <main class="page">
 
 <section class="container section">
-  <div class="admin card">
-    <h2>Admin Panel</h2>
-    <div class="grid two">
-      <section>
-        <h3>Products</h3>
-        <table class="table">
-          <thead><tr><th>Name</th><th>Price</th><th>Status</th></tr></thead>
-          <tbody>
-            <tr><td>Wireless Earbuds</td><td>$49</td><td>Active</td></tr>
-            <tr><td>Leather Wallet</td><td>$39</td><td>Active</td></tr>
-            <tr><td>Sports Watch</td><td>$69</td><td>Low Stock</td></tr>
-          </tbody>
-        </table>
-      </section>
-      <section>
-        <h3>Orders</h3>
-        <table class="table">
-          <thead><tr><th>#</th><th>Customer</th><th>Status</th></tr></thead>
-          <tbody>
-            <tr><td>10021</td><td>Raisa</td><td>Delivered</td></tr>
-            <tr><td>10022</td><td>Arif</td><td>Processing</td></tr>
-          </tbody>
-        </table>
-      </section>
-    </div>
-    <p class="muted">Note: This is a static UI demo without JS/backend.</p>
+  <div class="section-head">
+    <h2>Your Wishlist</h2>
+    <p class="muted">Items you’re keeping an eye on.</p>
+  </div>
+  <div class="stack list-items">
+    <article class="list-item card">
+      <div class="media small placeholder"></div>
+      <div class="li-body">
+        <h3>Sports Watch</h3>
+        <p class="price">$69</p>
+      </div>
+      <div class="li-actions">
+        <a class="btn btn-dark" href="cart.html">Move to Cart</a>
+        <a class="btn btn-ghost danger" href="#">Remove</a>
+      </div>
+    </article>
+    <article class="list-item card">
+      <div class="media small placeholder"></div>
+      <div class="li-body">
+        <h3>Leather Wallet</h3>
+        <p class="price">$39</p>
+      </div>
+      <div class="li-actions">
+        <a class="btn btn-dark" href="cart.html">Move to Cart</a>
+        <a class="btn btn-ghost danger" href="#">Remove</a>
+      </div>
+    </article>
   </div>
 </section>
 
