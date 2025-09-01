@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profile • NovaShop</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Cart • NovaShop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site-header">
@@ -27,35 +27,38 @@
 <main class="page">
 
 <section class="container section">
-  <div class="dashboard">
-    <aside class="card dash-nav">
-      <h3>Account</h3>
-      <a href="#" class="active">Overview</a>
-      <a href="#">Orders</a>
-      <a href="#">Addresses</a>
-      <a href="wishlist.html">Wishlist</a>
-      <a href="cart.html">Cart</a>
-    </aside>
-    <div class="card dash-main">
-      <h2>Welcome, Demo User</h2>
-      <p class="muted">This is a static profile page. In a real app, data would load after login.</p>
-      <div class="grid two mt">
-        <div class="tile">
-          <h4>Recent Orders</h4>
-          <ul class="list">
-            <li>#10021 — Delivered</li>
-            <li>#10022 — Processing</li>
-          </ul>
+  <div class="section-head">
+    <h2>Your Cart</h2>
+    <p class="muted">Review your items before checkout.</p>
+  </div>
+  <div class="cart-grid">
+    <div class="cart-list card">
+      <div class="cart-row">
+        <div class="media tiny placeholder"></div>
+        <div class="grow">
+          <h3>Wireless Earbuds</h3>
+          <p class="muted">Qty: 1</p>
         </div>
-        <div class="tile">
-          <h4>Saved Items</h4>
-          <ul class="list">
-            <li>Sports Watch</li>
-            <li>Leather Wallet</li>
-          </ul>
+        <strong>$49</strong>
+      </div>
+      <div class="cart-row">
+        <div class="media tiny placeholder"></div>
+        <div class="grow">
+          <h3>Cotton T‑Shirt</h3>
+          <p class="muted">Qty: 2</p>
         </div>
+        <strong>$38</strong>
       </div>
     </div>
+    <aside class="card cart-summary">
+      <h3>Order Summary</h3>
+      <div class="rows">
+        <div><span>Subtotal</span><span>$87</span></div>
+        <div><span>Shipping</span><span>$3</span></div>
+        <div class="total"><span>Total</span><span>$90</span></div>
+      </div>
+      <a class="btn btn-primary full" href="payment.html">Proceed to Payment</a>
+    </aside>
   </div>
 </section>
 

@@ -1,5 +1,27 @@
-<?php
+<?php 
+include 'connect.php'; 
 
+if (isset($_POST['register'])) {
+    $name  = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $pass  = mysqli_real_escape_string( $conn, $_POST['pass']);
+
+    $check = "SELECT * FROM Create_Acc WHERE email = '$email' ";
+    $result = mysqli_query($conn, $check);
+
+    if (mysqli_num_rows($result) > 0) {
+        echo "❌ This email already exists. Please use another.";
+    } else {
+        $sql = "INSERT INTO Create_Acc (name, email, pass) VALUES ('$name', '$email', '$pass')";
+        $data = mysqli_query($conn, $sql);
+
+        if ($data) {
+            echo "✅ Account created successfully!";
+        } else {
+            echo "❌ Error: " . mysqli_error($conn);
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -7,8 +29,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login • NovaShop</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Create Account • NovaShop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site-header">
@@ -20,22 +42,23 @@
       <a href="cart.html">Cart</a>
       <a href="payment.html">Payment</a>
       <a href="login.html" class="btn btn-ghost">Login</a>
-      <a href="register.html" class="btn btn-primary">Create Account</a>
     </nav>
   </div>
+
 </header>
 <main class="page">
 
 <section class="container section">
   <div class="auth card">
-    <h2>Login</h2>
-    <form class="form" action="profile.html">
+    <h2>Create Account</h2>
+    <form class="form" action="" method="POST">
+      <label>Full Name</label>
+      <input type="text" placeholder="Your name" name="name" required>
       <label>Email</label>
-      <input type="email" placeholder="you@email.com" required>
+      <input type="email" placeholder="you@email.com" name="email" required>
       <label>Password</label>
-      <input type="password" placeholder="••••••••" required>
-      <button class="btn btn-primary" type="submit">Login</button>
-      <p class="muted">No account? <a class="link" href="register.html">Create one</a>.</p>
+      <input type="password" placeholder="Choose a password" name="pass" required>
+      <button class="btn btn-primary" type="submit" name="register" value="register">Create Account</button>
     </form>
   </div>
 </section>
