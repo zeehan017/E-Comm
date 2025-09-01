@@ -34,7 +34,7 @@ function get_current_user_data() {
 // Function to require login
 function require_login() {
     if (!is_logged_in()) {
-        header('Location: login.php');
+        header('Location: /login');
         exit();
     }
 }
@@ -43,7 +43,7 @@ function require_login() {
 function require_admin() {
     require_login();
     if (!is_admin()) {
-        header('Location: index.php');
+        header('Location: /');
         exit();
     }
 }
@@ -51,7 +51,7 @@ function require_admin() {
 // Function to logout
 function logout() {
     session_destroy();
-    header('Location: index.php');
+    header('Location: /');
     exit();
 }
 ?>
