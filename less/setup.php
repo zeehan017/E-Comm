@@ -31,21 +31,25 @@ if (function_exists('session_start')) {
 
 echo "<h2>Database Setup</h2>";
 
-// Database configuration for XAMPP
+// Database configuration for cross-platform XAMPP
 $host = 'localhost';
 $username = 'root';
 $password = '';
 $database = 'asifechom';
 $port = 3306;
-$socket = '/opt/lampp/var/mysql/mysql.sock';
 
 try {
-    // Connect to MySQL server with XAMPP configuration
-    $conn = new mysqli($host, $username, $password, '', $port, $socket);
+    // Cross-platform database connection
+    // For Windows XAMPP, use standard connection
+    // For Linux XAMPP, socket path will be auto-detected
+    $conn = new mysqli($host, $username, $password, '', $port);
     
     if ($conn->connect_error) {
-        // Fallback to standard connection
-        $conn = new mysqli($host, $username, $password);
+        // Fallback for Linux XAMPP with socket
+        if (file_exists('/opt/lampp/var/mysql/mysql.sock')) {
+            $conn = new mysqli($host, $username, $password, '', $port, '/opt/lampp/var/mysql/mysql.sock');
+        }
+        
         if ($conn->connect_error) {
             throw new Exception("Connection failed: " . $conn->connect_error);
         }

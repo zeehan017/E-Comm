@@ -1,4 +1,7 @@
 <?php
+// Include system-independent configuration
+require_once __DIR__ . '/system_config.php';
+
 // Database configuration
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
@@ -7,13 +10,13 @@ define('DB_NAME', 'asifechom');
 
 // Application configuration
 define('APP_NAME', 'NovaShop');
-define('APP_URL', 'http://localhost/E-Comm/public');
+define('APP_URL', get_system_app_url());
 define('APP_VERSION', '1.0.0');
 
 // Create connection
 try {
-    // For XAMPP, specify the socket path
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, 3306, '/opt/lampp/var/mysql/mysql.sock');
+    // Use system-independent database connection
+    $conn = get_system_db_connection(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     
     // Check connection
     if ($conn->connect_error) {
@@ -23,7 +26,10 @@ try {
     // Set charset to utf8
     $conn->set_charset("utf8");
     
+    system_error_log("Database connected successfully on " . get_operating_system());
+    
 } catch (Exception $e) {
+    system_error_log("Database connection error: " . $e->getMessage());
     die("Database connection error: " . $e->getMessage());
 }
 
